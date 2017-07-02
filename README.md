@@ -40,7 +40,7 @@ debug ('cqssc result:', result);
 nodejs开发QQ群： 573207886
 
 ## 捐赠
-![捐赠](219668615.jpg =300x300)
+![捐赠](./219668615.jpg =300x300)
 
 ## License
 The MIT license.
