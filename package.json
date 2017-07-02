@@ -1,6 +1,6 @@
 {
   "name": "koa-lottery",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "get lottery result for koa2, made by windsome.feng",
   "main": "index.js",
   "scripts": {
