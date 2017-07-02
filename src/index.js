@@ -2,29 +2,21 @@ import _debug from 'debug';
 const debug = _debug('app:server:lottery:index');
 import moment from 'moment';
 import _ from 'lodash';
+import autobind from 'autobind-decorator'
 
 import Cqssc from './cqssc';
 
+@autobind
 export default class Lottery {
-    constructor (app) {
-        this.app = app;
+    constructor () {
+    }
+
+    init () {
         this.cqssc = new Cqssc();
-        this.router = require('koa-router')({ prefix: '/apis/v1/lottery' });
-        this.registerServices();
         this.database = {
             cqssc: { init: true },
         };
         this.eventLoop();
-    }
-
-    registerServices() {
-        var router = this.router;
-        // database/user
-        router.get('/cqssc', this.getResultCqssc.bind(this));
-
-        this.app.use(router.routes()).use(router.allowedMethods());
-        // save router.
-        //this.router = router;
     }
 
     eventLoop () {
