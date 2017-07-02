@@ -1,4 +1,4 @@
-lottery [![NPM version](https://badge.fury.io/js/koa3-wechat.png)](http://badge.fury.io/js/koa3-wechat) [![Build Status](https://travis-ci.org/windsome/koa3-wechat.png?branch=master)](https://travis-ci.org/windsome/koa3-wechat) [![Dependencies Status](https://david-dm.org/windsome/koa3-wechat.png)](https://david-dm.org/windsome/koa3-wechat) [![Coverage Status](https://coveralls.io/repos/windsome/koa3-wechat/badge.png)](https://coveralls.io/r/windsome/koa3-wechat)
+koa-lottery [![NPM version](https://badge.fury.io/js/koa-lottery.png)](http://badge.fury.io/js/koa-lottery) [![Build Status](https://travis-ci.org/windsome/koa-lottery.png?branch=master)](https://travis-ci.org/windsome/koa-lottery) [![Dependencies Status](https://david-dm.org/windsome/koa-lottery.png)](https://david-dm.org/windsome/koa-lottery) [![Coverage Status](https://coveralls.io/repos/windsome/koa-lottery/badge.png)](https://coveralls.io/r/windsome/koa-lottery)
 ======
 
 获取实时彩票结果的开源API
@@ -10,18 +10,26 @@ lottery [![NPM version](https://badge.fury.io/js/koa3-wechat.png)](http://badge.
 ## Installation
 
 ```sh
-$ npm install lottery
+$ npm install koa-lottery
 ```
 
 ## Use with koa
 
 ```js
-var wechat = require('lottery');
+import Lottery from 'koa-lottery';
+// init:
+var lottery = new Lottery ();
+lottery.init ();
+
+// get result:
+var result = await lottery.getResultAfterTime (new Date(), 'cqssc');
+debug ('cqssc result:', result);
 
 ```
 备注：token在微信平台的开发者中心申请
 
-## api usage
+## 数据来源
++ 重庆时时彩
    see <http://www.zhcw.com/kj/xndg/cq/ssc/>
 
 ## Show cases
